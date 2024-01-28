@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -119,5 +120,10 @@ public class CommonActions {
         if (!s.equalsIgnoreCase("")) {
             Assert.fail("Du lieu khong null");
         }
+    }
+
+    public void move(WebElement element) {
+        Actions a = new Actions(driver);
+        a.moveToElement(element).perform();
     }
 }
